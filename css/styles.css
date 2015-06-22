@@ -2,12 +2,12 @@
   border: 1px solid red;
 }
 */
-.landing_page {
+/*.landing_page {
   background: url("../img/elvis-bg.jpg");
   background-size: 110%;
   height: 640px;
   border: 1px solid black; /*try to get rid of this without messing up rest of image*/
-}
+/*}*/
 
 h1, h4 {
   color: #E0E0FF;
