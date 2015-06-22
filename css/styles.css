@@ -1,0 +1,122 @@
+/** {
+  border: 1px solid red;
+}
+*/
+.landing_page {
+  background: url("../img/elvis-bg.jpg");
+  background-size: 110%;
+  height: 640px;
+  border: 1px solid black; /*try to get rid of this without messing up rest of image*/
+}
+
+h1, h4 {
+  color: #E0E0FF;
+  font-family: TitleFont;
+  padding: 10px 0px 5px 0px;
+  text-align: center;
+  text-shadow: 4px  0px 6px #3D3D99, 0px  4px 6px black;
+}
+
+
+@font-face {
+  font-family: "Fradle";
+  src: url('../fonts/FRADLE__.ttf');
+}
+
+h2 {
+  font-size: 1em;
+  font-family: Fradle;
+  color: #E0E0FF;
+  text-shadow: 3px  0px 3px #3D3D99, 0px  3px 3px black;
+}
+
+.ui_btn, ul {
+  border: 1px solid black;
+  border-top: none;
+}
+
+.ui_btn {
+  color: red;
+}
+
+p {
+  color: #E0E0FF;
+  font-size: .9em !important;
+  text-shadow: 3px  0px 3px #3D3D99, 0px  3px 3px black;
+}
+
+#event_info {
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px 0px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 20px;
+  border-left: 3px solid #CCCCFF;
+  border-top: 3px solid #CCCCFF;
+  border-right: 3px solid #3D3D99;
+  border-bottom: 3px solid #3D3D99;
+  box-shadow: 5px 5px 5px black;
+  background-color: #353535;
+/*  -moz-box-shadow:    inset 0 0 30px #000000;
+  -webkit-box-shadow: inset 0 0 30px #000000;
+  box-shadow:         inset 0 0 30px #000000;*/
+}
+
+.cat_imgs {
+  width: 60;
+  height: 60px;
+  padding: 12px;
+}
+
+.event_picker_img {
+  border-radius: 20px;
+  border-left: 2px solid #CCCCFF;
+  border-top: 2px solid #CCCCFF;
+  border-right: 2px solid #3D3D99;
+  border-bottom: 2px solid #3D3D99;
+  margin: auto auto;
+  display: block;
+  margin-top: 7%;
+  background-color: #E0E0FF;
+  padding: 4px;
+  box-shadow: 5px 5px 5px black;
+}
+
+@font-face {
+  font-family: "TitleFont";
+  src: url('../fonts/MavblisDemo.otf');
+}
+
+h3 {
+  font-family: TitleFont;
+  color: #E0E0FF;
+  margin-top: 68%;
+  font-size: 50px;
+  margin-left: 15%;
+  text-shadow: 4px  0px 6px #3D3D99, 0px  4px 6px black;
+}
+
+.event_name {
+  position: absolute;
+  top: 4%;
+  left: 0px;
+  width: 100%;
+}
+
+#logo {
+  min-width: 100%;
+}
+
+.login-button {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 60%;
+}
+
+#sub {
+  font-size: 50px !important;
+}

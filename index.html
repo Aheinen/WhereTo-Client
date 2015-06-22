@@ -1,0 +1,197 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <title>WhereTo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/normalize.css" rel="stylesheet" media="screen">
+
+    <!-- Foundation -->
+    <link href="css/foundation.min.css" rel="stylesheet" media="screen">
+    <link href="css/foundation-icons.css" rel="stylesheet" media="screen">
+
+
+    <!-- jQuery Mobile -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!-- Personal CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Personal AJAX -->
+    <script src="js/my-ajax.js"></script>
+    <!-- Handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+    <!-- Modernizer -->
+    <script src="js/vendor/modernizr.js"></script>
+    <!-- Other Shizzz -->
+    <!-- Firebase -->
+
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+
+    <!-- Auth -->
+
+    <script src="js/auth.js"></script>
+
+
+    <script src="js/single-event.js"></script>
+
+  </head>
+  <body>
+
+    <!-- References: -->
+    <!-- data-transition options: fade, flip, flow, pop, slide, slidedown, slidefade, slideup, turn, none -->
+
+
+
+
+    <!-- HANDLEBARS TEMPLATES -->
+
+      <!-- SINGLE EVENT TAB -->
+      <script id="single-event-template" type="text/x-handlebars-template">
+        <a href="#">
+          <div id="{{event.id}}" class='image'>
+            <img  src="{{event.image}}" width=100% />
+            <h2>{{event.name}}</h2>
+          </div>
+          <p>Event Date: {{event.start_time}}</p>
+          <p>City: {{event.city}}</p>
+          <p>Venue: {{event.venue}}</p>
+        </a>
+      </script>
+
+      <!-- MULTI-EVENT/WISHLIST TAB -->
+      <script id="multi-event-template" type="text/x-handlebars-template">
+        <h4>Multiple Events</h4>
+
+        <ul data-role="listview" data-filter="true">
+          {{#each events}}
+            <li>
+              <a href="#" class="ui-btn">
+                <img src="img/rsz_event-management.png" alt="event_image" />
+                <h4>{{name}}</h4>
+                <p>{{description}}</p>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </script>
+
+      <!-- PREFERENCES PAGE -->
+      <script id="preferences" type="text/x-handlebars-template">
+        <h4>Select Your Preferences</h4>
+
+        <ul data-role="listview" data-filter="true">
+          {{#each categories}}
+            <li>
+              <a href="#" class="category ui-btn">
+                <img src="/img/cat_imgs/{{image}}" alt="category_image" class='cat_imgs' />
+                <p>{{description}}</p>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+        <a href="#" id="submit_preferences" class="ui-btn"><p id='sub'>Submit</p></a>
+      </script>
+
+    <!-- END HANDLEBARS TEMPLATES -->
+
+    <!-- App -->
+    <div data-role="page" id="single" data-theme="b">
+
+      <!-- Header -->
+      <div id="header" data-role="header" style="display: none">
+        <h1>Local Events</h1>
+      </div>
+
+      <!-- Container -->
+      <div id="container" class="landing_page" data-role="main">
+          <div class="transbox">
+            <h3>Where To</h3>
+          </div>
+          <a href="#"><img id="login" class="login-button" src="./img/fb-button.png"/></a>
+      </div><!-- End Container -->
+
+      <!-- Footer -->
+      <div id="footer" data-role="footer" data-position="fixed" style="display: none">
+        <!-- Nav -->
+        <div data-role="navbar">
+          <ul>
+            <li><a class="single-event-link" href="#single" data-icon="home"></a></li>
+            <li><a class="multi-event-link" href="#multiple" data-icon="bars"></a></li>
+            <li><a class="multi-event-link" href="#wishlist" data-icon="star"></a></li>
+          </ul>
+        </div><!-- End Nav -->
+      </div><!-- End Footer -->
+    </div><!-- End App -->
+
+
+
+    <!-- Search Page -->
+    <div data-role="page" id="search" data-theme="b">
+      <!-- Header -->
+      <div data-role="header">
+        <h1>Tinder For Babies</h1>
+      </div>
+
+      <!-- Main -->
+      <div data-role="main" class="ui-content">
+        <h4>Criteria</h4>
+        <!-- Search Form -->
+        <form>
+          <!-- Event Description -->
+          <label for="event_desc">Event Description</label>
+          <input name="event_desc" id="event_desc" placeholder="keywords">
+          <!-- Max Price -->
+          <label for="max_price">Max Price</label>
+          <input type="range" name="amount" id="amount" min="0" max="500">
+          <!-- Select Categories -->
+          <label for="categories">Categories</label>
+          <select required="required">
+            <option value="Categories">Categories</option>
+            <option value="Concert">Concert</option>
+            <option value="Festival">Festival</option>
+          </select>
+          <!-- Zip Code -->
+          <label for="zip_code">Zip Code</label>
+          <input name="zip_code" placeholder="94107">
+          <label for="max_price">Max Distance (miles)</label>
+          <input type="range" name="max_distance" id="max_distance" min="0" max="500">
+          <!-- Date & Time -->
+          <label for="date_range">Date Range</label>
+          <input type="datetime-local" name="start_date">
+          <input type="datetime-local" name="end_date">
+          <input type="submit" value="Search"/>
+        </form><!-- End Search Form -->
+      </div><!-- End Main -->
+
+      <!-- Footer -->
+      <div data-role="footer" data-position="fixed">
+        <!-- Nav -->
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#single" data-icon="home"></a></li>
+            <li><a href="#multiple" data-icon="bars"></a></li>
+            <li><a href="#wishlist" data-icon="star"></a></li>
+          </ul>
+        </div><!-- End Nav -->
+      </div><!-- End Footer -->
+    </div><!-- End Search Page -->
+
+
+
+
+
+    <!-- Load Scripts -->
+    <script src="js/my-ajax.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+  </body>
+</html>
+
+
+
+
