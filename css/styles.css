@@ -4,7 +4,7 @@
 */
 .landing_page {
   background: url("../img/elvis-bg.jpg");
-  background-size: 100%;
+  background-size: 110%;
   height: 640px;
   border: 1px solid black; /*try to get rid of this without messing up rest of image*/
 }*/

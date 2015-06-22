@@ -1,8 +1,9 @@
-$(document).ready(function(event) {
+$(document).on('pagecreate',function(event) {
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
   $('#login').on('tap', function(e){
    e.preventDefault();
+   alert("hi!");
    ref.authWithOAuthPopup("facebook", function(error, authData) {
      if (error) {
        console.log("Login Failed!", error);
