@@ -9,7 +9,7 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-           var desc = "<p>Description: " + json.event.description + "</p>";
+           // var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
             $('#container a').append(desc)
             $('#footer a').removeClass('ui-btn-active');
@@ -32,7 +32,7 @@ $(document).ready(function(event) {
            var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
 
-            $('#container a').append(desc)
+            // $('#container a').append(desc)
         }) // end getJSON
 
         $('#footer a').removeClass('ui-btn-active') // prevent highlighting of nav buttons
@@ -43,9 +43,13 @@ $(document).ready(function(event) {
     $('#footer').off('click', '.multi-event-link').on('click', '.multi-event-link', function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
-
+        if ($(this).attr('href') === '#wishlist'){
+        var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/wishlist"
+        }
+        else{
         var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
-
+        }
+        console.log(url);
         template = Handlebars.compile($("#multi-event-template").html())
 
         $.getJSON(url, function(json) {
@@ -91,9 +95,9 @@ $(document).ready(function(event) {
             $('#header').removeAttr('style');
             $('#footer').removeAttr('style');
             template = Handlebars.compile($("#single-event-template").html());
-            var desc = "<p>Description: " + response.event.description + "</p>";
+            // var desc = "<p>Description: " + response.event.description + "</p>";
             $("#container").html(template(response));
-            $('#container a').append(desc);
+            // $('#container a').append(desc);
         })
 
         updateInterests.fail(function(){

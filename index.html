@@ -13,11 +13,13 @@
     <!-- jQuery Mobile -->
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery.flip.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
     <!-- Personal CSS -->
     <link href="css/styles.css" rel="stylesheet">
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <!-- Personal AJAX -->
     <script src="js/my-ajax.js"></script>
     <!-- Handlebars -->
@@ -35,6 +37,7 @@
 
     <script src="js/single-event.js"></script>
 
+
   </head>
   <body>
 
@@ -49,14 +52,18 @@
       <!-- SINGLE EVENT TAB -->
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
-            <div id='{{event.id}}' class='image'>
+          <div id='{{event.id}}' class='image'>
+            <div class="front">
               <img src="{{event.image}}" width=100% class='event_info'/>
               <div class='event_text_container'>
                 <h2><span>{{event.name}}<br />{{event.venue}}</span></h2>
               </div>
             </div>
-            <p>Event Date: {{event.start_time}}</p>
-            <p>City: {{event.city}}</p>
+            <div class="back">
+              <p>Event Date: {{event.start_time}}</p>
+              <p>City: {{event.city}}</p>
+              <p>Details: {{event.description}}</p>
+            </div>
         </div>
         </a>
       </script>
