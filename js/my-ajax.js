@@ -17,6 +17,27 @@ $(document).ready(function(event) {
 
     }) // end single
 
+    $('#container').off('click', '.preview').on('click', '.preview', function(event) {
+        var user_id = $('#container').attr('class');
+        event.preventDefault();
+
+        console.log('fuu')
+
+        var event_id = $(this).attr('id');
+
+        var url = "https://whereto-server.herokuapp.com/events/" + event_id;
+
+        template = Handlebars.compile($("#single-event-template").html())
+
+        $.getJSON(url, function(json) {
+           var desc = "<p>Description: " + json.event.description + "</p>";
+            $("#container").html(template(json))
+
+            $('#container a').append(desc)
+        }) // end getJSON
+
+    }) // end single
+
 
     $('.multi-event-link').click(function(event) {
         var user_id = $('#container').attr('class');
@@ -27,6 +48,7 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#multi-event-template").html())
 
         $.getJSON(url, function(json) {
+            console.log(json)
             $("#container").html(template(json))
             $("#container > ul").listview().listview("refresh")
 
