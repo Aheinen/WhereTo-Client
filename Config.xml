@@ -15,5 +15,6 @@
 
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <access origin="*"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </widget>

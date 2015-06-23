@@ -21,9 +21,13 @@ $(document).ready(function(event) {
     $('.multi-event-link').click(function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
-
+        if ($(this).attr('href') === '#wishlist'){
+        var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/wishlist"
+        }
+        else{
         var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
-
+        }
+        console.log(url);
         template = Handlebars.compile($("#multi-event-template").html())
 
         $.getJSON(url, function(json) {
