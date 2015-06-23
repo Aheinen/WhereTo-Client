@@ -4,10 +4,6 @@ $(document).on('pagecreate',function(event) {
   $('#login').on('click', function(e){
    e.preventDefault();
    fbAuth().then(function(authData){
-
-   alert('Inside click trigger');
-   fbAuth().then(function(authData){
-
       alert('in the THEN for the promise');
       var firstName = authData.facebook.cachedUserProfile.first_name;
       var lastName = authData.facebook.cachedUserProfile.last_name;

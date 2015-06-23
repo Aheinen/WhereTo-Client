@@ -15,6 +15,7 @@
 
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <access origin="*"/>
+    <preference name="permissions" value="none"/>
 
 
 </widget>
