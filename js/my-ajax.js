@@ -1,6 +1,6 @@
 $(document).ready(function(event) {
 
-    $('.single-event-link').click(function(event) {
+    $('#footer').off('click', '.single-event-link').on('click', '.single-event-link', function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
 
@@ -11,14 +11,36 @@ $(document).ready(function(event) {
         $.getJSON(url, function(json) {
            // var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
+            $('#container a').append(desc)
+            $('#footer a').removeClass('ui-btn-active');
+        }) // end getJSON
+
+
+    }) // end single
+
+    $('#container').off('click', '.preview').on('click', '.preview', function(event) {
+        var user_id = $('#container').attr('class');
+        event.preventDefault();
+
+        var event_id = $(this).attr('id');
+
+        var url = "https://whereto-server.herokuapp.com/events/" + event_id;
+
+        template = Handlebars.compile($("#single-event-template").html())
+
+        $.getJSON(url, function(json) {
+           var desc = "<p>Description: " + json.event.description + "</p>";
+            $("#container").html(template(json))
 
             // $('#container a').append(desc)
         }) // end getJSON
 
+        $('#footer a').removeClass('ui-btn-active') // prevent highlighting of nav buttons
+
     }) // end single
 
 
-    $('.multi-event-link').click(function(event) {
+    $('#footer').off('click', '.multi-event-link').on('click', '.multi-event-link', function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
         if ($(this).attr('href') === '#wishlist'){
@@ -33,8 +55,9 @@ $(document).ready(function(event) {
         $.getJSON(url, function(json) {
             $("#container").html(template(json))
             $("#container > ul").listview().listview("refresh")
-
+            $('#footer a').removeClass('ui-btn-active');
         }) // end getJSON
+
 
     }) // end multi
 
@@ -84,4 +107,3 @@ $(document).ready(function(event) {
     }) // end submit preferences
 
 }); // end document ready
-

@@ -3,10 +3,12 @@ $(document).on('pagecreate',function(event) {
 
   $('#login').on('click', function(e){
    e.preventDefault();
-   // alert('Inside click trigger');
    fbAuth().then(function(authData){
 
-      // alert('in the THEN for the promise');
+   alert('Inside click trigger');
+   fbAuth().then(function(authData){
+
+      alert('in the THEN for the promise');
       var firstName = authData.facebook.cachedUserProfile.first_name;
       var lastName = authData.facebook.cachedUserProfile.last_name;
       var email = authData.facebook.email;
@@ -27,7 +29,7 @@ var fbAuth = function(){
   var promise = new Promise(function(resolve, reject){
     ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error) {
-        // alert("login failed!");
+        alert("login failed!");
         reject(error);
       } else {
         resolve(authData);
@@ -45,7 +47,7 @@ var createUser = function(obj){
     data: obj
   })
   .done(function(response){
-    // alert('in the AJAX done');
+    alert('in the AJAX done');
     window.location.href = '#container';
     console.log(response);
     var user_id = response.user.id.toString();
