@@ -38,10 +38,10 @@ $(document).ready(function(event) {
 
     }) // end multi
 
-    $('#container').on('click', '.category', function(event) {
+    $('#container').off('click', '.category').on('click', '.category', function(event) {
         event.preventDefault();
 
-        $(this).addClass("ui-btn-active");
+        $(this).toggleClass("ui-btn-active");
     }) // end preference selection
 
     // #.off used to prevent double firing of events
@@ -56,12 +56,10 @@ $(document).ready(function(event) {
 
             if ($(this).hasClass("ui-btn-active")) {
 
-                interests.push(index);
+                interests.push(index+1);
 
             } // end if loop
         }); // end each loop
-
-        // alert("Category IDs: " + interests);
 
         var user_id = $('#container').attr('class')
 
