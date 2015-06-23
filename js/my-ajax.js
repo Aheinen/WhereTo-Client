@@ -1,10 +1,10 @@
 $(document).ready(function(event) {
 
     $('.single-event-link').click(function(event) {
-
+        var user_id = $('#container').attr('class');
         event.preventDefault();
 
-        var url = "https://whereto-server.herokuapp.com/events"
+        var url = "https://whereto-server.herokuapp.com/users/" + user_id + "/events"
 
         template = Handlebars.compile($("#single-event-template").html())
 
@@ -19,43 +19,20 @@ $(document).ready(function(event) {
 
 
     $('.multi-event-link').click(function(event) {
-
+        var user_id = $('#container').attr('class');
         event.preventDefault();
 
-        var url = "https://whereto-server.herokuapp.com/events"
+        var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
 
         template = Handlebars.compile($("#multi-event-template").html())
 
         $.getJSON(url, function(json) {
-
-            // for (var i = 0; i < json.events.length; i++) {
-            //     var old_desc = json.events[i].description;
-            //     json.events[i].description = "<p>" + old_desc + "</p>";
-            // }
-
             $("#container").html(template(json))
             $("#container > ul").listview().listview("refresh")
 
         }) // end getJSON
 
     }) // end multi
-
-
-    // $('#trash').click(function(event) {
-    //     event.preventDefault();
-
-    //     var url = "http://localhost:3000/categories"
-
-    //     template = Handlebars.compile($("#preferences").html())
-
-    //     $.getJSON(url, function(json) {
-    //         $("#container").html(template(json))
-    //         $("#container > ul").listview().listview("refresh")
-    //     }) // end getJSON preferences
-
-
-    // }); // end trash event handler
-
 
     $('#container').on('click', '.category', function(event) {
         event.preventDefault();
