@@ -38,14 +38,17 @@ var fbAuth = function(){
 };
 });
 var createUser = function(obj){
+  alert('creating user')
   $.ajax({
     url: 'https://whereto-server.herokuapp.com/users',
     method:'POST',
-    data: obj
+    data: obj,
+    headers: {'Origin': 'http://localhost:8000'}
   })
   .done(function(response){
     alert('in the AJAX done');
     window.location.href = '#container';
+    console.log(response);
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
@@ -69,9 +72,9 @@ var createUser = function(obj){
     console.log("fail");
   })
 }
-  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-     WebView.setWebContentsDebuggingEnabled(true);
- }
+ //  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+ //     WebView.setWebContentsDebuggingEnabled(true);
+ // }
 
 
 
