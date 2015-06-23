@@ -31,7 +31,8 @@ var createUser = function(obj){
     data: obj
   })
   .done(function(response){
-    console.log(response);
+    alert(response);
+    window.location.href = '#container'
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
