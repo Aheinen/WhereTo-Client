@@ -42,8 +42,7 @@ var createUser = function(obj){
   $.ajax({
     url: 'https://whereto-server.herokuapp.com/users',
     method:'POST',
-    data: obj,
-    headers: {'Origin': 'http://localhost:8000'}
+    data: obj
   })
   .done(function(response){
     alert('in the AJAX done');
