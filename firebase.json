@@ -1,0 +1,9 @@
+{
+  "firebase": "wheretodbc",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
