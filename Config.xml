@@ -13,5 +13,7 @@
        WhereTo mobile application.
    </description>
 
+   <gap:plugin name="org.apache.cordova.inappbrowser" />
+   <access origin="*"/>
 
 </widget>

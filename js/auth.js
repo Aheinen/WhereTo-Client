@@ -1,7 +1,7 @@
 $(document).on('pagecreate',function(event) {
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
-  $('#login').on('tap', function(e){
+  $('#login').on('click', function(e){
    e.preventDefault();
    alert("hi!");
    ref.authWithOAuthPopup("facebook", function(error, authData) {
