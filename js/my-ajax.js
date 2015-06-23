@@ -9,10 +9,10 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-           var desc = "<p>Description: " + json.event.description + "</p>";
+           // var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
 
-            $('#container a').append(desc)
+            // $('#container a').append(desc)
         }) // end getJSON
 
     }) // end single
@@ -72,9 +72,9 @@ $(document).ready(function(event) {
             $('#header').removeAttr('style');
             $('#footer').removeAttr('style');
             template = Handlebars.compile($("#single-event-template").html());
-            var desc = "<p>Description: " + response.event.description + "</p>";
+            // var desc = "<p>Description: " + response.event.description + "</p>";
             $("#container").html(template(response));
-            $('#container a').append(desc);
+            // $('#container a').append(desc);
         })
 
         updateInterests.fail(function(){
