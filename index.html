@@ -13,6 +13,7 @@
     <!-- jQuery Mobile -->
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery.flip.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
     <!-- Personal CSS -->
@@ -35,6 +36,7 @@
 
     <script src="js/single-event.js"></script>
 
+
   </head>
   <body>
 
@@ -49,14 +51,18 @@
       <!-- SINGLE EVENT TAB -->
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
-            <div id='{{event.id}}' class='image'>
+          <div id='{{event.id}}' class='image'>
+            <div class="front">
               <img src="{{event.image}}" width=100% class='event_info'/>
               <div class='event_text_container'>
                 <h2><span>{{event.name}}<br />{{event.venue}}</span></h2>
               </div>
+              <p>Event Date: {{event.start_time}}</p>
+              <p>City: {{event.city}}</p>
             </div>
-            <p>Event Date: {{event.start_time}}</p>
-            <p>City: {{event.city}}</p>
+            <div class="back">
+              Details: {{event.description}}
+            </div>
         </div>
         </a>
       </script>

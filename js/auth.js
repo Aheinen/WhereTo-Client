@@ -3,10 +3,10 @@ $(document).on('pagecreate',function(event) {
 
   $('#login').on('click', function(e){
    e.preventDefault();
-   alert('Inside click trigger');
+   // alert('Inside click trigger');
    fbAuth().then(function(authData){
 
-      alert('in the THEN for the promise');
+      // alert('in the THEN for the promise');
       var firstName = authData.facebook.cachedUserProfile.first_name;
       var lastName = authData.facebook.cachedUserProfile.last_name;
       var email = authData.facebook.email;
@@ -27,7 +27,7 @@ var fbAuth = function(){
   var promise = new Promise(function(resolve, reject){
     ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error) {
-        alert("login failed!");
+        // alert("login failed!");
         reject(error);
       } else {
         resolve(authData);
@@ -44,7 +44,7 @@ var createUser = function(obj){
     data: obj
   })
   .done(function(response){
-    alert('in the AJAX done');
+    // alert('in the AJAX done');
     window.location.href = '#container';
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
@@ -54,9 +54,9 @@ var createUser = function(obj){
       $('#footer').removeAttr('style');
 
       template = Handlebars.compile($("#single-event-template").html());
-      var desc = "<p>Description: " + response.event.description + "</p>";
+      // var desc = "<p>Description: " + response.event.description + "</p>";
       $("#container").html(template(response));
-      $('#container a').append(desc);
+      // $('#container a').append(desc);
     }
     else {
       template = Handlebars.compile($("#preferences").html());
