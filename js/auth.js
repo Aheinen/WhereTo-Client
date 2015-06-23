@@ -70,7 +70,7 @@ var createUser = function(obj){
       $("#container > ul").listview().listview("refresh");
     }
 
-    // refreshPage();
+    refreshPage();
   })
   .fail(function(){
     console.log("fail");
@@ -85,13 +85,13 @@ function onDeviceReady() {
   ref.addEventListener('exit', function(event) { alert(event.type); });
  }
 
-// function refreshPage()
-// {
-//     jQuery.mobile.changePage('#single-event-template', {
-//         allowSamePageTransition: true,
-//         transition: 'none',
-//         reloadPage: true
-//     });
-// }
+function refreshPage()
+{
+    jQuery.mobile.changePage('#container', {
+        allowSamePageTransition: true,
+        transition: 'none',
+        reloadPage: true
+    });
+}
 
 
