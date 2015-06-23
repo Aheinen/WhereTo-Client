@@ -4,11 +4,8 @@ $(document).on('pagecreate',function(event) {
   $('#login').on('click', function(e){
    e.preventDefault();
    alert('Inside click trigger');
-   alert(cordova);
-   ref.authWithOAuthPopup("facebook", function(error, authData) {
-     if (error) {
-       alert("Login Failed!", error);
-     } else {
+   fbAuth().then(function(authData){
+
       alert('in the THEN for the promise');
       var firstName = authData.facebook.cachedUserProfile.first_name;
       var lastName = authData.facebook.cachedUserProfile.last_name;
@@ -21,11 +18,24 @@ $(document).on('pagecreate',function(event) {
         image: picture
       }
       createUser(userInfo);
-     }
+
    }, { scope: "email" });
  });
 
 
+var fbAuth = function(){
+  var promise = new Promise(function(resolve, reject){
+    ref.authWithOAuthPopup("facebook", function(error, authData) {
+      if (error) {
+        alert("login failed!");
+        reject(error);
+      } else {
+        resolve(authData);
+      };
+    });
+  })
+  return promise;
+};
 });
 var createUser = function(obj){
   $.ajax({
@@ -35,6 +45,7 @@ var createUser = function(obj){
   })
   .done(function(response){
     alert('in the AJAX done');
+    window.location.href = '#container'
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
@@ -59,17 +70,5 @@ var createUser = function(obj){
   })
 }
 
-// var onLoad = function() {
-//   // alert('load')
-//   document.addEventListener("deviceready", onDeviceReady, false);
-// };
-
-// var onDeviceReady = function() {
-//   var ref = window.open('http://apache.org', '_blank', 'location=yes');
-//   // close InAppBrowser after 5 seconds
-//   setTimeout(function() {
-//       ref.close();
-//   }, 5000);
-// }
 
 
