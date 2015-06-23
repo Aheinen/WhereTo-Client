@@ -45,13 +45,13 @@ var createUser = function(obj){
     data: obj
   })
   .done(function(response){
-    alert('in the AJAX done');
-    alert(window.location.href);
+    // alert('in the AJAX done');
+    // alert(window.location.href);
     // window.location.href = '#container';
     // console.log(window.location);
     console.log(window.location.href);
     // console.log(response);
-    window.close();
+    // window.close();
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
@@ -69,6 +69,8 @@ var createUser = function(obj){
       $("#container").html(template(response));
       $("#container > ul").listview().listview("refresh");
     }
+  console.log(window.location.href);
+  // alert(window.location.href);
   })
   .fail(function(){
     console.log("fail");
