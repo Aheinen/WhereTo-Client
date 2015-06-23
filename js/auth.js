@@ -1,7 +1,5 @@
 $(document).on('pagecreate',function(event) {
 
-  document.addEventListener("deviceready", onDeviceReady, false);
-
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
   $('#login').on('click', function(e){
@@ -31,6 +29,7 @@ var fbAuth = function(){
         // alert("login failed!");
         reject(error);
       } else {
+        document.addEventListener("deviceready", onDeviceReady, false);
         resolve(authData);
       };
     });
@@ -69,29 +68,17 @@ var createUser = function(obj){
       $("#container").html(template(response));
       $("#container > ul").listview().listview("refresh");
     }
-
-    refreshPage();
   })
   .fail(function(){
     console.log("fail");
   })
 }
 
+// Cordova is ready
+//
 function onDeviceReady() {
-  var ref = window.open('http://apache.org', '_blank', 'location=yes');
-  ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-  ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-  ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-  ref.addEventListener('exit', function(event) { alert(event.type); });
- }
+    cordova.exec(null, null, "SplashScreen", "hide", [])
 
-function refreshPage()
-{
-    jQuery.mobile.changePage('#container', {
-        allowSamePageTransition: true,
-        transition: 'none',
-        reloadPage: true
-    });
 }
 
 
