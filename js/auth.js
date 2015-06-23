@@ -47,8 +47,11 @@ var createUser = function(obj){
   })
   .done(function(response){
     // alert('in the AJAX done');
-    window.location.href = '#container';
-    console.log(response);
+    // window.location.href = '#container';
+    // console.log(window.location);
+    // console.log(window.location.href);
+    // console.log(response);
+    window.close();
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
@@ -67,6 +70,7 @@ var createUser = function(obj){
       $("#container > ul").listview().listview("refresh");
     }
 
+    // refreshPage();
   })
   .fail(function(){
     console.log("fail");
@@ -81,6 +85,13 @@ function onDeviceReady() {
   ref.addEventListener('exit', function(event) { alert(event.type); });
  }
 
-
+// function refreshPage()
+// {
+//     jQuery.mobile.changePage('#single-event-template', {
+//         allowSamePageTransition: true,
+//         transition: 'none',
+//         reloadPage: true
+//     });
+// }
 
 
