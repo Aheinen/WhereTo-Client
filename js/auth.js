@@ -69,9 +69,7 @@ var createUser = function(obj){
     console.log("fail");
   })
 }
- //  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
- //     WebView.setWebContentsDebuggingEnabled(true);
- // }
+
 
 
 

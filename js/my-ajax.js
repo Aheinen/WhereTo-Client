@@ -107,3 +107,8 @@ $(document).ready(function(event) {
     }) // end submit preferences
 
 }); // end document ready
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+   window.open = cordova.InAppBrowser.open;
+}
