@@ -45,7 +45,7 @@ var createUser = function(obj){
   })
   .done(function(response){
     alert('in the AJAX done');
-    window.location.href = '#container'
+    window.location.href = '#container';
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
