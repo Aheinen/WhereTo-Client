@@ -45,10 +45,11 @@ var createUser = function(obj){
     data: obj
   })
   .done(function(response){
-    // alert('in the AJAX done');
+    alert('in the AJAX done');
+    alert(window.location.href);
     // window.location.href = '#container';
     // console.log(window.location);
-    // console.log(window.location.href);
+    console.log(window.location.href);
     // console.log(response);
     window.close();
     var user_id = response.user.id.toString();
