@@ -6,7 +6,7 @@ $(document).on('pagecreate',function(event) {
    alert("hi!");
    ref.authWithOAuthPopup("facebook", function(error, authData) {
      if (error) {
-       console.log("Login Failed!", error);
+       alert("Login Failed!", error);
      } else {
       var firstName = authData.facebook.cachedUserProfile.first_name;
       var lastName = authData.facebook.cachedUserProfile.last_name;
