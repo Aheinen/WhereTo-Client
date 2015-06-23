@@ -3,7 +3,6 @@ $(document).on('pagecreate',function(event) {
 
   $('#login').on('click', function(e){
    e.preventDefault();
-   alert("hi!");
    ref.authWithOAuthPopup("facebook", function(error, authData) {
      if (error) {
        alert("Login Failed!", error);
@@ -56,3 +55,18 @@ var createUser = function(obj){
     console.log("fail");
   })
 }
+
+var onLoad = function() {
+  // alert('load')
+  document.addEventListener("deviceready", onDeviceReady, false);
+};
+
+var onDeviceReady = function() {
+  var ref = window.open('http://apache.org', '_blank', 'location=yes');
+  // close InAppBrowser after 5 seconds
+  setTimeout(function() {
+      ref.close();
+  }, 5000);
+}
+
+
