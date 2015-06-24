@@ -1,6 +1,6 @@
 $(document).on('pagecreate',function(event) {
 
-  setInApp();
+  // setInApp();
 
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
@@ -108,8 +108,8 @@ var onResume = function(){
   // alert("resume works")
 };
 
-var setInApp = function(){
-  var ref = cordova.InAppBrowser.open('http://www.google.com', '_blank', 'location=yes');
-  ref.addEventListener('loadstart', function(event) { alert(event.url); });
-};
+// var setInApp = function(){
+//   var ref = cordova.InAppBrowser.open('http://www.google.com', '_blank', 'location=yes');
+//   ref.addEventListener('loadstart', function(event) { alert(event.url); });
+// };
 

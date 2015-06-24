@@ -13,7 +13,7 @@
        WhereTo mobile application.
    </description>
 
-    <gap:plugin name="org.apache.cordova.inappbrowser"/>
+    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
     <access origin="*"/>
     <preference name="permissions" value="none"/>
 
