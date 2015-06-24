@@ -10,14 +10,15 @@
     <link href="css/foundation.min.css" rel="stylesheet" media="screen">
     <link href="css/foundation-icons.css" rel="stylesheet" media="screen">
 
-    <!-- Mobile? -->
+    <!-- Mobile -->
     <script src="js/mobile.js"></script>
 
     <!-- Personal CSS -->
     <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Phonegap Includes -->
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script src="inappbrowser.js"></script>
 
     <!-- Our JavaScript -->
     <script src="js/my-ajax.js"></script>
@@ -36,9 +37,11 @@
     <script src="js/auth.js"></script>
     <script src="js/single-event.js"></script>
 
-    <!-- jQuery Mobile -->
+    <!-- jQuery Mobile & UI -->
     <script src="jquery.flip.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
   </head>
@@ -50,7 +53,7 @@
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
           <div id='{{event.id}}' class='image'>
-            <div class="front">
+            <div class="front" data-transition="slide">
               <img src="{{event.image}}" class='event_info'/>
               <div class='event_text_container'>
                 <h2><span>{{event.name}}<br />{{event.venue}}</span></h2>
@@ -197,7 +200,6 @@
 
 
     <!-- Load Scripts -->
-    <script src="js/my-ajax.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();

@@ -20,6 +20,8 @@
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <access origin="*"/>
     <preference name="permissions" value="none"/>
+    <allow-intent href="*.firebaseio.com" />
+    <allow-intent href="auth.firebase.com" />
 
 
 </widget>
