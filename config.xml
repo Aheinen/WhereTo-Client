@@ -17,10 +17,8 @@
        PhoneGap Team
    </author>
 
-  <feature name="InAppBrowser">
-     <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
-  </feature>
-    <access origin="*"/>
+    <gap:plugin name="org.apache.cordova.inappbrowser"/>
+    <access origin="*" browserOnly="true"/>
     <preference name="permissions" value="none"/>
 
 
