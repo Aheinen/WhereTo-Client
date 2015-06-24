@@ -50,6 +50,13 @@ h2 {
   text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
 }
 
+h7 {
+  font-family: Fradle;
+  font-size: 16px;
+  color: #E0E0FF;
+  text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
+}
+
 h2 span {
   background: rgba(0, 0, 0, 0.7);
 }
@@ -78,10 +85,19 @@ p {
   text-shadow: 3px  0px 3px #3D3D99, 0px  3px 3px black;
 }
 
+.stock {
+  height: 100px;
+  width: 100px;
+}
+
 .event_info {
   margin-top: 10px;
   border-radius: 20px;
-  width: 90%;
+  height: 325px;
+  width: 325px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
   margin: 15px 0px 0px 15px;
   border-radius: 20px;
   border-left: 3px solid #CCCCFF !important;
