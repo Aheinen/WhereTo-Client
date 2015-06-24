@@ -29,7 +29,7 @@ var fbAuth = function(){
         // alert("login failed!");
         reject(error);
       } else {
-        document.addEventListener("deviceready", onDeviceReady, false);
+        // document.addEventListener("deviceready", onDeviceReady, false);
         resolve(authData);
       };
     });
@@ -46,12 +46,6 @@ var createUser = function(obj){
   })
   .done(function(response){
     // alert('in the AJAX done');
-    // alert(window.location.href);
-    // window.location.href = '#container';
-    // console.log(window.location);
-    console.log(window.location.href);
-    // console.log(response);
-    // window.close();
     var user_id = response.user.id.toString();
     $('#container').addClass(user_id);
     $('#container').removeClass("landing_page");
@@ -79,9 +73,9 @@ var createUser = function(obj){
 
 // Cordova is ready
 //
-function onDeviceReady() {
-    cordova.exec(null, null, "SplashScreen", "hide", [])
+// function onDeviceReady() {
+//     cordova.exec(null, null, "SplashScreen", "hide", [])
 
-}
+// }
 
 
