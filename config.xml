@@ -14,7 +14,7 @@
    </description>
 
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
-    <access origin="*"/<name />
+    <access origin="*"/>
     <preference name="permissions" value="none"/>
     <access uri="https://*.firebaseio.com" subdomains="true" />
     <feature name="InAppBrowser">
