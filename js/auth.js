@@ -74,11 +74,35 @@ var createUser = function(obj){
   })
 }
 
-// Cordova is ready
-//
-// function onDeviceReady() {
-//     cordova.exec(null, null, "SplashScreen", "hide", [])
+//onLoad functions
+var onLoad = function() {
+  // alert('load')
+  document.addEventListener("deviceready", onDeviceReady, false);
+};
 
-// }
+var onDeviceReady = function() {
+  // alert('ready')
+  bindPause();
+  bindResume();
+};
 
+var bindPause = function() {
+  document.addEventListener('pause', onPause, false);
+};
+
+var onPause = function(){
+  // alert('pause')
+  Firebase.goOffline();
+};
+
+var bindResume = function(){
+  document.addEventListener('resume', onResume, false);
+};
+
+var onResume = function(){
+  clearMarkers();
+  Firebase.goOnline();
+  loadSpaces();
+  // alert("resume works")
+};
 
