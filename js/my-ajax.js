@@ -107,7 +107,7 @@ $(document).ready(function(event) {
 
 }); // end document ready
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-   window.open = cordova.InAppBrowser.open;
-}
+// document.addEventListener("deviceready", onDeviceReady, false);
+// function onDeviceReady() {
+//    window.open = cordova.InAppBrowser.open;
+// }

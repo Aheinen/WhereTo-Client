@@ -24,7 +24,7 @@ $(document).on('pagecreate',function(event) {
       createUser(userInfo);
 
    }, { scope: "email" });
-   onDeviceReady();
+   // onDeviceReady();
  });
 
 
