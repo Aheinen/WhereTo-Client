@@ -1,17 +1,17 @@
 $(document).ready(function(event) {
 
     $('#footer').off('click', '.single-event-link').on('click', '.single-event-link', function(event) {
-        var user_id = $('#container').attr('class');
         event.preventDefault();
+        var user_id = $('#container').attr('class');
 
         var url = "https://whereto-server.herokuapp.com/users/" + user_id + "/events"
 
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-           // var desc = "<p>Description: " + json.event.description + "</p>";
+           var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
-            $('#container a').append(desc)
+            $('#container').find('.back').append(desc)
             $('#footer a').removeClass('ui-btn-active');
         }) // end getJSON
 
@@ -19,7 +19,6 @@ $(document).ready(function(event) {
     }) // end single
 
     $('#container').off('click', '.preview').on('click', '.preview', function(event) {
-        var user_id = $('#container').attr('class');
         event.preventDefault();
 
         var event_id = $(this).attr('id');
@@ -32,7 +31,7 @@ $(document).ready(function(event) {
            var desc = "<p>Description: " + json.event.description + "</p>";
             $("#container").html(template(json))
 
-            // $('#container a').append(desc)
+            $('#container').find('.back').append(desc)
         }) // end getJSON
 
         $('#footer a').removeClass('ui-btn-active') // prevent highlighting of nav buttons
