@@ -1,6 +1,5 @@
 $(document).on('pagecreate',function(event) {
 
-  // setInApp();
 
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
@@ -21,9 +20,10 @@ $(document).on('pagecreate',function(event) {
 
       setTimeout(createUser(userInfo), 1000)
 
-      // createUser(userInfo);
+      createUser(userInfo);
 
    }, { scope: "email" });
+  setInApp();
  });
 
 
@@ -108,8 +108,8 @@ var onResume = function(){
   // alert("resume works")
 };
 
-// var setInApp = function(){
-//   var ref = cordova.InAppBrowser.open('http://www.google.com', '_blank', 'location=yes');
-//   ref.addEventListener('loadstart', function(event) { alert(event.url); });
-// };
+var setInApp = function(){
+  var ref = cordova.InAppBrowser.open('http://192.168.1.82:8000/', '_blank', 'location=yes');
+  ref.addEventListener('loadstart', function(event) { alert(event.url); });
+};
 

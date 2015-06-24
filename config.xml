@@ -18,7 +18,7 @@
    </author>
 
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
-    <access origin="*" browserOnly="true"/>
+    <access origin="*"/>
     <preference name="permissions" value="none"/>
 
 
