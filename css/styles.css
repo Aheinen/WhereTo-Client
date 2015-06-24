@@ -5,7 +5,7 @@
 .landing_page {
   background: url("../img/elvis-bg.jpg");
   background-size: 110%;
-  height: 640px;
+  height: 638px;
   border: 1px solid black; /*try to get rid of this without messing up rest of image*/
 }
 
@@ -15,6 +15,10 @@ h1, h4 {
   padding: 10px 0px 5px 0px;
   text-align: center;
   text-shadow: 4px  0px 6px #3D3D99, 0px  4px 6px black;
+}
+
+a.category.ui-btn {
+  min-height: 0px !important;
 }
 
 @font-face {
@@ -66,17 +70,12 @@ h2 span {
   padding:0 5px;
 }
 
-.ui_btn, ul {
-  border: 1px solid black;
-  border-top: none;
-}
-
-.ui_btn {
-  color: red;
-}
-
 #event_name {
   color: red;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 p {
@@ -114,7 +113,7 @@ p {
 
 .cat_imgs {
   width: 60;
-  height: 60px;
+  height: 40px;
   padding: 12px;
 }
 
@@ -165,9 +164,21 @@ h3 {
 }
 
 #sub {
-  font-size: 50px !important;
+  font-size: 42px !important;
 }
 
+#container.1 {
+  padding-bottom: 42px;
+}
+
+#filler {
+  height: 41px;
+}
+
+a.category.ui-btn.ui-btn-active {
+  border-color: black !important;
+  background-color: black !important;
+}
 
 /*Flip*/
 
@@ -177,12 +188,12 @@ h3 {
 }
 
 .front {
-  padding-top: 45px;
+  padding-top: 42px;
 }
 
 .back {
     display: none;
-    padding: 85px 20px 20px 20px;
+    padding: 85px 20px 60px 20px;
 }
 
 .flip {
