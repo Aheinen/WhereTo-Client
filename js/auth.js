@@ -16,7 +16,10 @@ $(document).on('pagecreate',function(event) {
         email: email,
         image: picture
       }
-      createUser(userInfo);
+
+      setTimeout(createUser(userInfo), 1000)
+
+      // createUser(userInfo);
 
    }, { scope: "email" });
  });
@@ -49,7 +52,7 @@ var createUser = function(obj){
     // alert(window.location.href);
     // window.location.href = '#container';
     // console.log(window.location);
-    console.log(window.location.href);
+    // console.log(window.location.href);
     // console.log(response);
     // window.close();
     var user_id = response.user.id.toString();
