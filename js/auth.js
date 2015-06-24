@@ -32,6 +32,7 @@ var fbAuth = function(){
         // document.addEventListener("deviceready", onDeviceReady, false);
         resolve(authData);
       };
+
     });
   })
   return promise;
@@ -63,7 +64,7 @@ var createUser = function(obj){
       $("#container").html(template(response));
       $("#container > ul").listview().listview("refresh");
     }
-  console.log(window.location.href);
+  // console.log(window.location.href);
   // alert(window.location.href);
   })
   .fail(function(){
