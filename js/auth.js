@@ -24,7 +24,6 @@ $(document).on('pagecreate',function(event) {
 
    $('#logout').on('click', function(e){
     e.preventDefault();
-    console.log('logging out');
    })
  });
 

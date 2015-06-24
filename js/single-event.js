@@ -35,16 +35,15 @@ var createWishlist = function(data) {
     data: data
   })
   .done(function(response){
-    if (json.event.description) {
-      var desc = "<p>Description: " + json.event.description + "</p>";
+    if (response.event.description) {
+      var desc = "<p>Description: " + response.event.description + "</p>";
     } else {
       var desc = "<p>Description: Not Provided.</p>"
     }
     template = Handlebars.compile($("#single-event-template").html());
 
-    $("#container").html(template(response));
-    $('#container').find('.back').append(desc);
     $("#container").html(template(response)).css('display', 'none');
+    $('#container').find('.back').append(desc);
     $('#container').fadeIn(1000);
   })
   .fail(function(){
