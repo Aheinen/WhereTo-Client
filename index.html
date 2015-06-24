@@ -6,11 +6,19 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="css/normalize.css" rel="stylesheet" media="screen">
 
-    <!-- Mobile? -->
+    <!-- jQuery Mobile & UI -->
+    <script src="jquery.flip.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!-- Mobile -->
     <script src="js/mobile.js"></script>
 
     <!-- Personal CSS -->
     <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Phonegap Includes -->
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
     <!-- Handlebars -->
@@ -27,10 +35,6 @@
     <script src="js/auth.js"></script>
     <script src="js/single-event.js"></script>
 
-    <!-- jQuery Mobile -->
-    <script src="jquery.flip.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
   </head>
   <body>
@@ -41,8 +45,8 @@
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
           <div id='{{event.id}}' class='image'>
-            <div class="front">
-              <img src="{{event.image}}" width=100% class='event_info'/>
+            <div class="front" data-transition="slide">
+              <img src="{{event.image}}" class='event_info'/>
               <div class='event_text_container'>
                 <h2><span>{{event.name}}<br />{{event.venue}}</span></h2>
               </div>
@@ -57,15 +61,13 @@
 
       <!-- MULTI-EVENT/WISHLIST TAB -->
       <script id="multi-event-template" type="text/x-handlebars-template">
-        <h4>Multiple Events</h4>
 
         <ul data-role="listview" data-filter="true">
           {{#each events}}
             <li>
               <a id="{{id}}" href="#" class="ui-btn preview">
-                <img src="img/rsz_event-management.png" alt="event_image" />
-                <h4>{{name}}</h4>
-                <p>{{description}}</p>
+                <img src="{{image}}" class='stock' alt="event_image" />
+                <h7>{{name}}</h7>
               </a>
             </li>
           {{/each}}
@@ -105,7 +107,7 @@
 
       <!-- Header -->
       <div id="header" data-role="header" data-position="fixed" style="display: none">
-        <h1>Local Events</h1>
+        <h1>Where To</h1>
         <a href="#mypanel">MENU</a>
       </div>
 
@@ -129,7 +131,6 @@
         </div><!-- End Nav -->
       </div><!-- End Footer -->
     </div><!-- End App -->
-
   </body>
 </html>
 

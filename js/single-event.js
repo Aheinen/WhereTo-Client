@@ -2,28 +2,17 @@ $(document).ready(function(event) {
   baseURL = 'https://whereto-server.herokuapp.com/'
   $('#container').on('swipeleft', '.image', function(e){
     e.preventDefault();
+    $('.image').fadeOut();
     var data = {accepted: false};
     createWishlist(data);
   });
 
   $('#container').on('swiperight', '.image', function(e){
     e.preventDefault();
+    $('.image').fadeOut();
     var data = {accepted: true};
     createWishlist(data);
   });
-
-  // $('#container').on('click', '.image', function(e){
-  //   e.preventDefault();
-  //   $(".image").flip(true);
-  // });
-
-  //
-  //   $('.image').flip({
-  //     axis: 'y',
-  //     trigger: 'click',
-  //     reverse: true,
-  //   });
-  // });
 
   $('#container').on('click', '.image', function(){
     var page1 = $('.front');
@@ -34,8 +23,6 @@ $(document).ready(function(event) {
     toHide.removeClass('flip in').addClass('flip out').hide();
     toShow.removeClass('flip out').addClass('flip in').show();
   });
-
-
 });
 
 var createWishlist = function(data) {
@@ -54,8 +41,11 @@ var createWishlist = function(data) {
       var desc = "<p>Description: Not Provided.</p>"
     }
     template = Handlebars.compile($("#single-event-template").html());
+
     $("#container").html(template(response));
-    $('#container').find('.back').append(desc)
+    $('#container').find('.back').append(desc);
+    $("#container").html(template(response)).css('display', 'none');
+    $('#container').fadeIn(1000);
   })
   .fail(function(){
     alert('fail');
