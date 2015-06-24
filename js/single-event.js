@@ -12,19 +12,6 @@ $(document).ready(function(event) {
     createWishlist(data);
   });
 
-  // $('#container').on('click', '.image', function(e){
-  //   e.preventDefault();
-  //   $(".image").flip(true);
-  // });
-
-  //
-  //   $('.image').flip({
-  //     axis: 'y',
-  //     trigger: 'click',
-  //     reverse: true,
-  //   });
-  // });
-
   $('#container').on('click', '.image', function(){
     var page1 = $('.front');
     var page2 = $('.back');
@@ -34,8 +21,6 @@ $(document).ready(function(event) {
     toHide.removeClass('flip in').addClass('flip out').hide();
     toShow.removeClass('flip out').addClass('flip in').show();
   });
-
-
 });
 
 var createWishlist = function(data) {
@@ -49,9 +34,7 @@ var createWishlist = function(data) {
   })
   .done(function(response){
     template = Handlebars.compile($("#single-event-template").html());
-    // var desc = "<p>Description: " + response.event.description + "</p>";
     $("#container").html(template(response));
-    // $('#container a').append(desc);
   })
   .fail(function(){
     alert('fail');

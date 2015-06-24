@@ -13,12 +13,15 @@
        WhereTo mobile application.
    </description>
 
+   <author href="http://phonegap.com" email="alexheinen99@gmail.com">
+       PhoneGap Team
+   </author>
+
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <access origin="*"/>
     <preference name="permissions" value="none"/>
-    <access uri="https://*.firebaseio.com" subdomains="true" />
-    <feature name="InAppBrowser">
-       <param name="android-package" value="org.apache.cordova.InAppBrowser" />
-   </feature>
+    <allow-intent href="*.firebaseio.com" />
+    <allow-intent href="auth.firebase.com" />
+
 
 </widget>
