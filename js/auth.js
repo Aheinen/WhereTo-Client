@@ -2,6 +2,10 @@ $(document).on('pagecreate',function(event) {
 
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
+  // var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+  // ref.addEventListener('loadstart', function(event) { alert(event.url); });
+
+
   $('#login').on('click', function(e){
    e.preventDefault();
    fbAuth().then(function(authData){
@@ -27,7 +31,7 @@ $(document).on('pagecreate',function(event) {
 
 var fbAuth = function(){
   var promise = new Promise(function(resolve, reject){
-    ref.authWithOAuthPopup("facebook", function(error, authData) {
+    ref.authWithOAuthRedirect("facebook", function(error, authData) {
       if (error) {
         // alert("login failed!");
         reject(error);
