@@ -1,5 +1,8 @@
 $(document).on('pagecreate',function(event) {
 
+  template = Handlebars.compile($("#login-template").html());
+  $('#container').html(template());
+
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
   $('#login').on('click', function(e){
@@ -24,6 +27,7 @@ $(document).on('pagecreate',function(event) {
 
    $('#logout').on('click', function(e){
     e.preventDefault();
+    console.log('trying to logout')
    })
  });
 
