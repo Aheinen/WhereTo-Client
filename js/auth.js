@@ -1,6 +1,6 @@
 $(document).on('pagecreate',function(event) {
 
-  setInApp();
+  // setInApp();
 
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
@@ -24,6 +24,7 @@ $(document).on('pagecreate',function(event) {
       createUser(userInfo);
 
    }, { scope: "email" });
+   onDeviceReady();
  });
 
 
@@ -112,4 +113,12 @@ var setInApp = function(){
   var ref = cordova.InAppBrowser.open('http://192.168.1.82:8000/', '_blank', 'location=yes');
   ref.addEventListener('loadstart', function(event) { alert(event.url); });
 };
+
+function onDeviceReady() {
+  var ref = window.open('https://auth.firebase.com/blank/page.html', '_blank', 'location=yes');
+// close InAppBrowser after 5 seconds
+  setTimeout(function() {
+      ref.close();
+  }, 500);
+ }
 
