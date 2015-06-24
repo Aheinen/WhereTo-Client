@@ -1,8 +1,11 @@
 $(document).on('pagecreate',function(event) {
 
+  template = Handlebars.compile($("#login-template").html());
+  $('#container').html(template());
+
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
-  $('#login').on('click', function(e){
+  $('#container').on('click','#login', function(e){
    e.preventDefault();
    fbAuth().then(function(authData){
       var firstName = authData.facebook.cachedUserProfile.first_name;
@@ -15,15 +18,18 @@ $(document).on('pagecreate',function(event) {
         email: email,
         image: picture
       }
-
-      setTimeout(createUser(userInfo), 1000)
-
       createUser(userInfo);
-
    }, { scope: "email" });
 
    $('#logout').on('click', function(e){
     e.preventDefault();
+    template = Handlebars.compile($("#login-template").html());
+    $('#container').html(template());
+    $('#container').removeClass();
+    $('#container').addClass("landing_page");
+    $('#header').css('display', 'none');
+    $('#footer').css('display', 'none');
+    ref.unauth();
    })
  });
 

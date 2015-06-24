@@ -35,12 +35,18 @@
     <script src="js/auth.js"></script>
     <script src="js/single-event.js"></script>
 
-
   </head>
+
   <body>
 
     <!-- HANDLEBARS TEMPLATES -->
-
+      <script id="login-template" type="text/x-handlebars-template">
+        <div class="transbox">
+            <h3>Where To</h3>
+          </div>
+          <a href="#"><img id="login" class="login-button" src="./img/fb-button.png"/></a>
+        </div>
+      </script>
       <!-- SINGLE EVENT TAB -->
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
@@ -113,10 +119,7 @@
 
       <!-- Container -->
       <div id="container" class="landing_page" data-role="main">
-          <div class="transbox">
-            <h3>Where To</h3>
-          </div>
-          <a href="#"><img id="login" class="login-button" src="./img/fb-button.png"/></a>
+
       </div><!-- End Container -->
 
       <!-- Footer -->
