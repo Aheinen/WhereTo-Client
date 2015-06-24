@@ -9,7 +9,11 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-           var desc = "<p>Description: " + json.event.description + "</p>";
+            if (json.event.description) {
+                var desc = "<p>Description: " + json.event.description + "</p>";
+            } else {
+                var desc = "<p>Description: Not Provided.</p>"
+            }
             $("#container").html(template(json))
             $('#container').find('.back').append(desc)
             $('#footer a').removeClass('ui-btn-active');
@@ -28,9 +32,12 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-           var desc = "<p>Description: " + json.event.description + "</p>";
+             if (json.event.description) {
+                var desc = "<p>Description: " + json.event.description + "</p>";
+            } else {
+                var desc = "<p>Description: Not Provided.</p>"
+            }
             $("#container").html(template(json))
-
             $('#container').find('.back').append(desc)
         }) // end getJSON
 
@@ -43,13 +50,13 @@ $(document).ready(function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
         if ($(this).attr('href') === '#wishlist'){
-        var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/wishlist"
+            var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/wishlist"
         }
         else{
-        var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
-        }
-        console.log(url);
-        template = Handlebars.compile($("#multi-event-template").html())
+            var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
+            }
+            console.log(url);
+            template = Handlebars.compile($("#multi-event-template").html())
 
         $.getJSON(url, function(json) {
             $("#container").html(template(json))

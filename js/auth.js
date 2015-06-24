@@ -60,9 +60,15 @@ var createUser = function(obj){
       $('#footer').removeAttr('style');
 
       template = Handlebars.compile($("#single-event-template").html());
-      // var desc = "<p>Description: " + response.event.description + "</p>";
+
+      if (response.event.description) {
+        var desc = "<p>Description: " + response.event.description + "</p>";
+      } else {
+        var desc = "<p>Description: Not Provided.</p>"
+      }
+
       $("#container").html(template(response));
-      // $('#container a').append(desc);
+      $('#container').find('.back').append(desc);
     }
     else {
       template = Handlebars.compile($("#preferences").html());
