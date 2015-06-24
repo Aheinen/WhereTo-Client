@@ -48,10 +48,14 @@ var createWishlist = function(data) {
     data: data
   })
   .done(function(response){
+    if (json.event.description) {
+      var desc = "<p>Description: " + json.event.description + "</p>";
+    } else {
+      var desc = "<p>Description: Not Provided.</p>"
+    }
     template = Handlebars.compile($("#single-event-template").html());
-    // var desc = "<p>Description: " + response.event.description + "</p>";
     $("#container").html(template(response));
-    // $('#container a').append(desc);
+    $('#container').find('.back').append(desc)
   })
   .fail(function(){
     alert('fail');
