@@ -2,12 +2,14 @@ $(document).ready(function(event) {
   baseURL = 'https://whereto-server.herokuapp.com/'
   $('#container').on('swipeleft', '.image', function(e){
     e.preventDefault();
+    $('.image').fadeOut();
     var data = {accepted: false};
     createWishlist(data);
   });
 
   $('#container').on('swiperight', '.image', function(e){
     e.preventDefault();
+    $('.image').fadeOut();
     var data = {accepted: true};
     createWishlist(data);
   });
@@ -34,7 +36,8 @@ var createWishlist = function(data) {
   })
   .done(function(response){
     template = Handlebars.compile($("#single-event-template").html());
-    $("#container").html(template(response));
+    $("#container").html(template(response)).css('display', 'none');
+    $('#container').fadeIn(1000);
   })
   .fail(function(){
     alert('fail');

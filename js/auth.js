@@ -21,8 +21,12 @@ $(document).on('pagecreate',function(event) {
       createUser(userInfo);
 
    }, { scope: "email" });
- });
 
+   $('#logout').on('click', function(e){
+    e.preventDefault();
+    console.log('logging out');
+   })
+ });
 
 var fbAuth = function(){
   var promise = new Promise(function(resolve, reject){
