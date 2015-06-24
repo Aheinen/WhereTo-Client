@@ -24,11 +24,18 @@ h1, h4 {
 
 #single {
   height: 100%;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+h1.ui-title {
+  padding-top: 20px !important;
+  margin-bottom: -8px !important;
 }
 
 .event_text_container {
   position: absolute;
-  top: 70px;
+  top: 115px;
   left: 27px;
   width: 300px;
   height: 268px;
@@ -153,10 +160,13 @@ h3 {
     -moz-perspective: 1000;
 }
 
+.front {
+  padding-top: 45px;
+}
 
 .back {
     display: none;
-    padding: 40px 20px 20px 20px;
+    padding: 85px 20px 20px 20px;
 }
 
 .flip {
