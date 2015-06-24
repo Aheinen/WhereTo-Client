@@ -13,7 +13,13 @@
        WhereTo mobile application.
    </description>
 
-    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
+   <author href="http://phonegap.com" email="alexheinen99@gmail.com">
+       PhoneGap Team
+   </author>
+
+  <feature name="InAppBrowser">
+     <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
+  </feature>
     <access origin="*"/>
     <preference name="permissions" value="none"/>
 
