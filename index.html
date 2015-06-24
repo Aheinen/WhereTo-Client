@@ -10,28 +10,28 @@
     <link href="css/foundation.min.css" rel="stylesheet" media="screen">
     <link href="css/foundation-icons.css" rel="stylesheet" media="screen">
 
-
-
+    <!-- Mobile? -->
     <script src="js/mobile.js"></script>
+
     <!-- Personal CSS -->
     <link href="css/styles.css" rel="stylesheet">
-
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <!-- Personal AJAX -->
+
+    <!-- Our JavaScript -->
     <script src="js/my-ajax.js"></script>
+    <script src="js/preferences.js"></script>
+
     <!-- Handlebars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+
     <!-- Modernizer -->
     <script src="js/vendor/modernizr.js"></script>
-    <!-- Other Shizzz -->
-    <!-- Firebase -->
 
+    <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 
     <!-- Auth -->
-
     <script src="js/auth.js"></script>
-
     <script src="js/single-event.js"></script>
 
     <!-- jQuery Mobile -->
@@ -41,12 +41,6 @@
 
   </head>
   <body>
-
-    <!-- References: -->
-    <!-- data-transition options: fade, flip, flow, pop, slide, slidedown, slidefade, slideup, turn, none -->
-
-
-
 
     <!-- HANDLEBARS TEMPLATES -->
 
@@ -63,7 +57,6 @@
             <div class="back">
               <p>Event Date: {{event.start_time}}</p>
               <p>City: {{event.city}}</p>
-              <p>Details: {{event.description}}</p>
             </div>
         </div>
         </a>
@@ -93,7 +86,7 @@
         <ul data-role="listview" data-filter="true">
           {{#each categories}}
             <li>
-              <a href="#" class="category ui-btn">
+              <a href="#" class="category ui-btn{{#if selected}} ui-btn-active{{/if}}">
                 <img src="/img/cat_imgs/{{image}}" alt="category_image" class='cat_imgs' />
                 <p>{{description}}</p>
               </a>
@@ -110,10 +103,11 @@
 
       <!-- Menu Panel -->
       <div data-role="panel" id="mypanel" data-position="left" data-display="overlay">
-        <button class="preferences" href="#my-header" data-rel="close">Preferences</button><br>
-        <button class="settings" href="#my-header" data-rel="close">Settings</button><br>
-        <button class="logout" href="#my-header" data-rel="close">Log Out</button><br>
-        <button href="#my-header" data-rel="close">Close</a>
+        <button id="home" href="#single-event-link" data-rel="close">Home</button><br>
+        <button id="preferences" href="#my-header" data-rel="close">Preferences</button><br>
+        <button id="settings" href="#my-header" data-rel="close">Settings</button><br>
+        <button id="logout" href="#my-header" data-rel="close">Log Out</button><br>
+        <button id="" href="#my-header" data-rel="close">Close</a>
       </div><!-- /panel -->
 
       <!-- Header -->
