@@ -1,5 +1,6 @@
 $(document).on('pagecreate',function(event) {
 
+  setInApp();
 
   var ref = new Firebase("https://wheretodbc.firebaseIO.com");
 
@@ -23,7 +24,6 @@ $(document).on('pagecreate',function(event) {
       createUser(userInfo);
 
    }, { scope: "email" });
-  setInApp();
  });
 
 
