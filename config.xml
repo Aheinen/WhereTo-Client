@@ -18,7 +18,7 @@
    </author>
 
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
-    <access origin="http://192.168.1.82:8000/"/>
+    <access origin="*"/>
     <preference name="permissions" value="none"/>
 
 
