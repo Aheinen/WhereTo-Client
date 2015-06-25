@@ -23,6 +23,32 @@ $(document).ready(function(event) {
     toHide.removeClass('flip in').addClass('flip out').hide();
     toShow.removeClass('flip out').addClass('flip in').show();
   });
+
+  $('#container').on('click', '#yes', function(e){
+    e.preventDefault();
+    $('.image').fadeOut();
+    var data = {accepted: true};
+    createWishlist(data);
+  });
+
+  $('#container').on('click', '#no', function(e){
+    e.preventDefault();
+    $('.image').fadeOut();
+    var data = {accepted: false};
+    createWishlist(data);
+  });
+
+  $('#container').on('click', '#about', function(e){
+    e.preventDefault();
+    var page1 = $('.front');
+    var page2 = $('.back');
+    var toHide = page1.is(':visible') ? page1 : page2 ;
+    var toShow = page2.is(':visible') ? page1 : page2 ;
+
+    toHide.removeClass('flip in').addClass('flip out').hide();
+    toShow.removeClass('flip out').addClass('flip in').show();
+  });
+
 });
 
 var createWishlist = function(data) {
