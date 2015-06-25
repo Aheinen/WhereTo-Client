@@ -50,19 +50,37 @@
       <!-- SINGLE EVENT TAB -->
       <script id="single-event-template" type="text/x-handlebars-template">
           <a href="#">
-          <div id='{{event.id}}' class='image'>
-            <div class="front" data-transition="slide">
-              <img src="{{event.image}}" class='event_info'/>
-              <div class='event_text_container'>
-                <h2><span>{{event.name}}<br />{{event.venue}}</span></h2>
+            <div id='{{event.id}}' class='image'>
+              <div class="front" data-transition="slide">
+                <img src="{{event.image}}" class='event_info'/>
+                <div class='event_text_container'>
+                  <div id='opacity'>
+                    <h2>{{event.name}}<br />{{event.venue}}</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <p>Event Date: {{event.start_time}}</p>
+                <p>City: {{event.city}}</p>
               </div>
             </div>
-            <div class="back">
-              <p>Event Date: {{event.start_time}}</p>
-              <p>City: {{event.city}}</p>
+
+            <div class='front'>
+              <button id='no'>
+                <p>Nope</p>
+              </button>
+              <button id='yes'>
+                <p>Yes!</p>
+              </button>
+              <br>
+              <button id='about'>
+                <p>About</p>
+              </button>
             </div>
-        </div>
-        </a>
+
+          </a>
+
+
       </script>
 
       <!-- MULTI-EVENT/WISHLIST TAB -->
@@ -93,8 +111,10 @@
               </a>
             </li>
           {{/each}}
+          <li>
+            <a href="#" id="submit_preferences" class="ui-btn"><p id='sub'>Submit</p></a>
+          </li>
         </ul>
-        <a href="#" id="submit_preferences" class="ui-btn"><p id='sub'>Submit</p></a>
       </script>
 
     <!-- END HANDLEBARS TEMPLATES -->

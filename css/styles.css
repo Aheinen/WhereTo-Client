@@ -1,7 +1,7 @@
-/** {
-  border: 1px solid red;
+* {
+  box-shadow: none;
 }
-*/
+
 .landing_page {
   background: url("../img/elvis-bg.jpg");
   background-size: 110%;
@@ -39,10 +39,61 @@ h1.ui-title {
 
 .event_text_container {
   position: absolute;
-  top: 115px;
-  left: 27px;
-  width: 300px;
-  height: 268px;
+  top: 110px;
+  left: 18px;
+  width: 325px;
+  height: 290px;
+}
+
+#yes, #no, #about {
+  background: #454545;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  font-size: 20px;
+  border-left: 2px solid #A36666;
+  border-top: 2px solid #A36666;
+  border-right: 2px solid #660000;
+  border-bottom: 2px solid #660000;
+  box-shadow: 3px 3px 3px black;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+#yes {
+  float: right;
+  margin-right: 30px;
+  border-left: 2px solid #C2F0C2;
+  border-top: 2px solid #C2F0C2;
+  border-right: 2px solid #145214;
+  border-bottom: 2px solid #145214;
+}
+
+#yes p {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+}
+
+#no p {
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+}
+
+#about {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  left: 25%;
+  top: -120px;
+
+  border-left: 2px solid #CCCCFF;
+  border-top: 2px solid #CCCCFF;
+  border-right: 2px solid #3D3D99;
+  border-bottom: 2px solid #3D3D99;
 }
 
 h2 {
@@ -51,7 +102,12 @@ h2 {
   font-family: Fradle;
   font-size: 18px;
   color: #E0E0FF;
+  width: 305px;
   text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 10px 18px 10px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
 h7 {
@@ -59,15 +115,6 @@ h7 {
   font-size: 16px;
   color: #E0E0FF;
   text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
-}
-
-h2 span {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.spacer {
-  background: rgba(0, 0, 0, 0.7);
-  padding:0 5px;
 }
 
 #event_name {
@@ -128,7 +175,7 @@ p {
   margin-top: 7%;
   background-color: #E0E0FF;
   padding: 4px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px black !important;
 }
 
 @font-face {
@@ -160,11 +207,17 @@ h3 {
   width: 50%;
   margin-left: 25%;
   margin-right: auto;
-  margin-top: 60%;
+  margin-top: 50%;
 }
 
 #sub {
-  font-size: 42px !important;
+  text-align: center;
+  margin-top: 2px !important;
+  font-size: 30px !important;
+}
+
+#submit_preferences {
+  border-top: 1px solid black;
 }
 
 #container.1 {
@@ -175,9 +228,9 @@ h3 {
   height: 41px;
 }
 
-a.category.ui-btn.ui-btn-active {
+.ui-btn-active {
   border-color: black !important;
-  background-color: black !important;
+  background-color: #666699 !important;
 }
 
 /*Flip*/

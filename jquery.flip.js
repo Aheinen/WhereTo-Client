@@ -3,7 +3,7 @@
 * Copyright (c) 2015 Nattawat Nonsung; Licensed MIT */
 (function( $ ) {
   var flip = function($dom) {
-    $dom.data("fliped", true);
+    $dom.data("flipped", true);
 
     var rotateAxis = "rotate" + $dom.data("axis");
     $dom.find(".front").css({
@@ -16,7 +16,7 @@
   };
 
   var unflip = function($dom) {
-    $dom.data("fliped", false);
+    $dom.data("flipped", false);
 
     var rotateAxis = "rotate" + $dom.data("axis");
     $dom.find(".front").css({
@@ -45,7 +45,7 @@
           trigger: "click",
           speed: 500
         }, options );
-        
+
         // save reverse and axis css to DOM for performing flip
         $dom.data("reverse", settings.reverse);
         $dom.data("axis", settings.axis);
@@ -117,5 +117,5 @@
 
     return this;
   };
- 
+
 }( jQuery ));
