@@ -1,10 +1,11 @@
 $(document).ready(function(event) {
+    baseURL = 'https://whereto-server.herokuapp.com'
 
     $('#footer').off('click', '.single-event-link').on('click', '.single-event-link', function(event) {
         event.preventDefault();
         var user_id = $('#container').attr('class');
 
-        var url = "https://whereto-server.herokuapp.com/users/" + user_id + "/events"
+        var url = baseURL + "/users/" + user_id + "/events"
 
         template = Handlebars.compile($("#single-event-template").html())
 
@@ -27,7 +28,7 @@ $(document).ready(function(event) {
 
         var event_id = $(this).attr('id');
 
-        var url = "https://whereto-server.herokuapp.com/events/" + event_id;
+        var url = baseURL + "/events/" + event_id;
 
         template = Handlebars.compile($("#single-event-template").html())
 
@@ -50,10 +51,10 @@ $(document).ready(function(event) {
         var user_id = $('#container').attr('class');
         event.preventDefault();
         if ($(this).attr('href') === '#wishlist'){
-            var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/wishlist"
+            var url = baseURL + "/users/" + user_id+ "/wishlist"
         }
         else{
-            var url = "https://whereto-server.herokuapp.com/users/" + user_id+ "/events/list"
+            var url = baseURL + "/users/" + user_id+ "/events/list"
             }
             console.log(url);
             template = Handlebars.compile($("#multi-event-template").html())
@@ -76,8 +77,3 @@ $(document).ready(function(event) {
 
 
 }); // end document ready
-
-// document.addEventListener("deviceready", onDeviceReady, false);
-// function onDeviceReady() {
-//    window.open = cordova.InAppBrowser.open;
-// }

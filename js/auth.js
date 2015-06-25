@@ -48,7 +48,7 @@ var fbAuth = function(){
 });
 var createUser = function(obj){
   $.ajax({
-    url: 'https://whereto-server.herokuapp.com/users',
+    url: baseURL + '/users',
     method:'POST',
     data: obj
   })

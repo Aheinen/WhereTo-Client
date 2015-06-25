@@ -7,7 +7,7 @@ $(document).ready(function(event) {
         $('#footer').css('display', 'none')
 
         var user_id = $('#container').attr('class');
-        var url = 'https://whereto-server.herokuapp.com/users/' + user_id + "/edit";
+        var url = baseURL + '/users/' + user_id + "/edit";
 
         $.getJSON(url, function(json) {
             console.log(json)
@@ -21,7 +21,7 @@ $(document).ready(function(event) {
     .on('click', '#home', function(event) {
         var user_id = $('#container').attr('class');
 
-        var url = "https://whereto-server.herokuapp.com/users/" + user_id + "/events"
+        var url = baseURL + "/users/" + user_id + "/events"
 
         template = Handlebars.compile($("#single-event-template").html())
 
@@ -55,7 +55,7 @@ $(document).ready(function(event) {
         var user_id = $('#container').attr('class')
 
         var updateInterests = $.post(
-            "https://whereto-server.herokuapp.com/users/"+user_id+"/interests",
+            baseURL + "/users/" + user_id + "/interests",
             {interests: interests}
         );
 

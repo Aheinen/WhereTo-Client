@@ -1,5 +1,4 @@
 $(document).ready(function(event) {
-  baseURL = 'https://whereto-server.herokuapp.com/'
   $('#container').on('swipeleft', '.image', function(e){
     e.preventDefault();
     discardEvent();
@@ -35,9 +34,9 @@ $(document).ready(function(event) {
 var createWishlist = function(data) {
   var user_id = $('#container').attr('class')
   var event_id = $('.image').attr('id');
-  var url = 'users/' + user_id + '/events/' + event_id + '/wishlists'
+  var url = baseURL + '/users/' + user_id + '/events/' + event_id + '/wishlists'
   $.ajax({
-    url: baseURL + url,
+    url: url,
     type: "POST",
     data: data
   })
