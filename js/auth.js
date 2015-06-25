@@ -7,19 +7,19 @@ $(document).on('pagecreate',function(event) {
 
   $('#container').on('click','#login', function(e){
    e.preventDefault();
-   fbAuth().then(function(authData){
-      var firstName = authData.facebook.cachedUserProfile.first_name;
-      var lastName = authData.facebook.cachedUserProfile.last_name;
-      var email = authData.facebook.email;
-      var picture = authData.facebook.cachedUserProfile.picture.data.url;
+   // fbAuth().then(function(authData){
+   //    var firstName = authData.facebook.cachedUserProfile.first_name;
+   //    var lastName = authData.facebook.cachedUserProfile.last_name;
+   //    var email = authData.facebook.email;
+   //    var picture = authData.facebook.cachedUserProfile.picture.data.url;
       var userInfo = {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        image: picture
+        first_name: "Fernanda",
+        last_name: "Getschko",
+        email: "f.martins.marques@gmail.com",
+        image: null
       }
       createUser(userInfo);
-   }, { scope: "email" });
+   // }, { scope: "email" });
 
    $('#logout').on('click', function(e){
     e.preventDefault();
