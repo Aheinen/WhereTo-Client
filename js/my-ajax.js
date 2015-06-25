@@ -1,5 +1,5 @@
 $(document).ready(function(event) {
-    baseURL = 'http://localhost:3000'
+    baseURL = 'https://whereto-server.herokuapp.com'
 
     $('#footer').off('click', '.single-event-link').on('click', '.single-event-link', function(event) {
         event.preventDefault();
