@@ -2,51 +2,32 @@ $(document).ready(function(event) {
   baseURL = 'https://whereto-server.herokuapp.com/'
   $('#container').on('swipeleft', '.image', function(e){
     e.preventDefault();
-    $('.image').fadeOut();
-    var data = {accepted: false};
-    createWishlist(data);
+    discardEvent();
   });
 
   $('#container').on('swiperight', '.image', function(e){
     e.preventDefault();
-    $('.image').fadeOut();
-    var data = {accepted: true};
-    createWishlist(data);
+    addEvent();
   });
 
-  $('#container').on('click', '.image', function(){
-    var page1 = $('.front');
-    var page2 = $('.back');
-    var toHide = page1.is(':visible') ? page1 : page2 ;
-    var toShow = page2.is(':visible') ? page1 : page2 ;
-
-    toHide.removeClass('flip in').addClass('flip out').hide();
-    toShow.removeClass('flip out').addClass('flip in').show();
+  $('#container').on('click', '.image', function(e){
+    e.preventDefault();
+    flipEvent();
   });
 
   $('#container').on('click', '#yes', function(e){
     e.preventDefault();
-    $('.image').fadeOut();
-    var data = {accepted: true};
-    createWishlist(data);
+    addEvent();
   });
 
   $('#container').on('click', '#no', function(e){
     e.preventDefault();
-    $('.image').fadeOut();
-    var data = {accepted: false};
-    createWishlist(data);
+    discardEvent();
   });
 
   $('#container').on('click', '#about', function(e){
     e.preventDefault();
-    var page1 = $('.front');
-    var page2 = $('.back');
-    var toHide = page1.is(':visible') ? page1 : page2 ;
-    var toShow = page2.is(':visible') ? page1 : page2 ;
-
-    toHide.removeClass('flip in').addClass('flip out').hide();
-    toShow.removeClass('flip out').addClass('flip in').show();
+    flipEvent();
   });
 
 });
@@ -75,4 +56,26 @@ var createWishlist = function(data) {
   .fail(function(){
     alert('fail');
   })
+}
+
+var addEvent = function() {
+  $('.image').fadeOut();
+  var data = {accepted: true};
+  createWishlist(data);
+}
+
+var discardEvent = function() {
+  $('.image').fadeOut();
+  var data = {accepted: false};
+  createWishlist(data);
+}
+
+var flipEvent = function() {
+  var page1 = $('.front');
+  var page2 = $('.back');
+  var toHide = page1.is(':visible') ? page1 : page2 ;
+  var toShow = page2.is(':visible') ? page1 : page2 ;
+
+  toHide.removeClass('flip in').addClass('flip out').hide();
+  toShow.removeClass('flip out').addClass('flip in').show();
 }
