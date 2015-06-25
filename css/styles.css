@@ -1,6 +1,13 @@
-* {
-  box-shadow: none;
+a.category.ui-btn  {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
+
+.ui-btn:focus, .ui-btn:focus, .ui-body-b.ui-focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 
 .landing_page {
   background: url("../img/elvis-bg.jpg");
@@ -14,7 +21,7 @@ h1, h4 {
   font-family: TitleFont;
   padding: 10px 0px 5px 0px;
   text-align: center;
-  text-shadow: 4px  0px 6px #3D3D99, 0px  4px 6px black;
+  text-shadow: 2px  0px 3px #3D3D99, 0px  2px 3px black;
 }
 
 a.category.ui-btn {
@@ -58,6 +65,8 @@ h1.ui-title {
   box-shadow: 3px 3px 3px black;
   margin-top: 5px;
   margin-left: 30px;
+  padding-bottom: -40px;
+  margin-bottom: -40px;
 }
 
 #yes {
@@ -88,7 +97,7 @@ h1.ui-title {
   width: 120px;
   height: 120px;
   left: 25%;
-  top: -120px;
+  top: -85px;
 
   border-left: 2px solid #CCCCFF;
   border-top: 2px solid #CCCCFF;
@@ -103,8 +112,8 @@ h2 {
   font-size: 18px;
   color: #E0E0FF;
   width: 305px;
-  text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
-  background: rgba(0,0,0,0.5);
+/*  text-shadow: 2px  2px 2px #3D3D99, 2px  2px 2px black;
+*/  background: rgba(0,0,0,0.5);
   padding: 10px 10px 18px 10px;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
@@ -114,7 +123,7 @@ h7 {
   font-family: Fradle;
   font-size: 16px;
   color: #E0E0FF;
-  text-shadow: 3px  3px 3px #3D3D99, 3px  3px 3px black;
+  text-shadow: 2px  2px 2px #3D3D99, 2px  2px 2px black;
 }
 
 #event_name {
@@ -128,7 +137,8 @@ a {
 p {
   color: #E0E0FF;
   font-size: .9em !important;
-  text-shadow: 3px  0px 3px #3D3D99, 0px  3px 3px black;
+  font-weight: normal;
+  text-shadow: 2px  2px 2px #3D3D99, 2px  2px 2px black;
 }
 
 .stock {
@@ -189,7 +199,7 @@ h3 {
   margin-top: 68%;
   font-size: 50px;
   margin-left: 15%;
-  text-shadow: 4px  0px 6px #3D3D99, 0px  4px 6px black;
+  text-shadow: 2px  0px 3px #3D3D99, 0px  2px 3px black;
 }
 
 .event_name {
