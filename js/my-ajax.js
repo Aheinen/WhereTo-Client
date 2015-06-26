@@ -10,9 +10,9 @@ $(document).ready(function(event) {
 
         $.getJSON(url, function(json) {
             if (json.event.description) {
-                var desc = "<p>Description: " + json.event.description + "</p>";
+                var desc = "<p><span class='bold'>Description:</span> " + json.event.description + "</p>";
             } else {
-                var desc = "<p>Description: Not Provided.</p>"
+                var desc = "<p><span class='bold'>Description:</span> Not Provided.</p>"
             }
             $("#container").html(template(json))
             $('#container').find('.back').append(desc)
@@ -33,9 +33,9 @@ $(document).ready(function(event) {
 
         $.getJSON(url, function(json) {
              if (json.event.description) {
-                var desc = "<p>Description: " + json.event.description + "</p>";
+                var desc = "<p><span class='bold'>Description:</span> " + json.event.description + "</p>";
             } else {
-                var desc = "<p>Description: Not Provided.</p>"
+                var desc = "<p><span class='bold'>Description:</span> Not Provided.</p>"
             }
             $("#container").html(template(json))
             $('#container').find('.back').append(desc)

@@ -60,8 +60,8 @@
                 </div>
               </div>
               <div class="back">
-                <p>Event Date: {{event.start_time}}</p>
-                <p>City: {{event.city}}</p>
+                <p><span class='bold'>Event Date:</span> {{event.start_time}}</p>
+                <p><span class='bold'>City:</span> {{event.city}}</p>
               </div>
             </div>
 
@@ -107,7 +107,7 @@
             <li>
               <a href="#" class="category ui-btn{{#if selected}} ui-btn-active{{/if}}">
                 <img src="/img/cat_imgs/{{image}}" alt="category_image" class='cat_imgs' />
-                <p>{{description}}</p>
+                <p><span class='bold'>{{description}}</span></p>
               </a>
             </li>
           {{/each}}

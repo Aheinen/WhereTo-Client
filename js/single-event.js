@@ -62,9 +62,9 @@ var createWishlist = function(data) {
   })
   .done(function(response){
     if (response.event.description) {
-      var desc = "<p>Description: " + response.event.description + "</p>";
+      var desc = "<p><span class='bold'>Description:</span> " + response.event.description + "</p>";
     } else {
-      var desc = "<p>Description: Not Provided.</p>"
+      var desc = "<p><span class='bold'>Description:</span> Not Provided.</p>"
     }
     template = Handlebars.compile($("#single-event-template").html());
 

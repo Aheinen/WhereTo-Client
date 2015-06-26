@@ -26,7 +26,7 @@ $(document).ready(function(event) {
         template = Handlebars.compile($("#single-event-template").html())
 
         $.getJSON(url, function(json) {
-            var desc = "<p>Description: " + json.event.description + "</p>";
+            var desc = "<p><span class='bold'>Description:</span> " + json.event.description + "</p>";
             $("#container").html(template(json))
             $('#container').find('.back').append(desc)
             $('#footer a').removeClass('ui-btn-active');

@@ -16,6 +16,10 @@ a.category.ui-btn  {
   border: 1px solid black; /*try to get rid of this without messing up rest of image*/
 }
 
+.bold {
+  font-weight: bold;
+}
+
 h1, h4 {
   color: #E0E0FF;
   font-family: TitleFont;
